@@ -1,7 +1,7 @@
 # Simple REST API
 
 This is a learning project <br/>
-which is a simple REST API that allows you to create, read, update and delete users.
+which is a simple REST API that allows you to create, read, update and delete users from MongoDB.
 
 created using `Node.js` and `Express`.
 
