@@ -41,7 +41,7 @@ export const login = async (req: express.Request, res: express.Response) => {
 
     return res.status(200).json(user).end(); // OK
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return res.sendStatus(400); // Bad Request
   }
 };
@@ -69,7 +69,7 @@ export const register = async (req: express.Request, res: express.Response) => {
 
     return res.status(201).json(user).end(); // Created
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return res.sendStatus(400); // Bad Request
   }
 };

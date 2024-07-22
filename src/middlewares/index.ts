@@ -22,7 +22,7 @@ export const isOnwer = async (
 
     next();
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return res.sendStatus(400); // Bad Request
   }
 };
@@ -50,7 +50,7 @@ export const isAuthenticated = async (
 
     return next(); // Continue
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return res.sendStatus(401); // Unauthorized
   }
 };
