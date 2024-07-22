@@ -5,16 +5,20 @@ import {
   getUserById,
   getUsers,
   updateUserById,
-} from "../db/users";
+} from "../models/users.model";
 
 export const getAllUsers = async (
   req: express.Request,
   res: express.Response
 ) => {
   try {
-    const user = await getUsers();
+    const users = await getUsers();
 
-    return res.status(200).json(user); // OK
+    if (!users) {
+      return res.sendStatus(404); // Not Found
+    }
+
+    return res.status(200).json(users); // OK
   } catch (error) {
     console.log(error);
     return res.sendStatus(500); // Bad Request

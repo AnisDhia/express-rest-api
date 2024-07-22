@@ -1,7 +1,7 @@
 import express from "express";
 import { get, identity, merge } from "lodash";
 
-import { getUserBySessionToken } from "../db/users";
+import { getUserBySessionToken } from "../models/users.model";
 
 export const isOnwer = async (
   req: express.Request,

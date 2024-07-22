@@ -5,9 +5,11 @@ import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
 import mongoose from "mongoose";
-import router from "./router";
+import router from "./routes";
 import dotenv from "dotenv";
 import setupSwagger from "./swagger";
+import { startMetricsServer } from "./helpers/metrics";
+import log from "./helpers/logger";
 
 // Load environment variables from .env file based on NODE_ENV
 const envFile = `.env.${process.env.NODE_ENV || "dev"}`;
@@ -29,9 +31,11 @@ setupSwagger(app);
 
 const server = http.createServer(app);
 
+startMetricsServer();
+
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}/`);
+  log.info(`Server is running on http://localhost:${PORT}/`);
 });
 
 mongoose.Promise = Promise;
