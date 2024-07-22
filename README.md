@@ -71,7 +71,7 @@ DELETE /users/:id
 - [x] Create a simple REST API
 - [x] Add authentication
 - [x] Add a database
-- [ ] Add tests
+- [x] Add tests
 - [ ] Add Docker support
 - [ ] Add CI/CD
 - [x] Add documentation
